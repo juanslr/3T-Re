@@ -1,0 +1,13 @@
+.spinner {
+    border:0px;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left:50%;
+    top:50%;
+    text-align: center;
+    display: none;
+    z-index: -1;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}

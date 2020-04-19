@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded",function(){
 	//Asociar eventos
-	let formularioAjaxMYSQL = document.getElementById("formulario");
-    formularioAjaxMYSQL.addEventListener("submit",function(event){
-        event.preventDefault();
         realizarPeticionAsincronaMYSQL();
-    });
 });
 
 
@@ -41,6 +37,7 @@ function realizarPeticionAsincronaMYSQL(){
 	
 	let divResultado =  document.getElementById("resultado");
 	divResultado.innerHTML = "";
+	document.getElementById("spinner").style ="display:block";
 	let	miXHR = new objetoXHR();
 	miXHR.open("GET", "servidor/datosMYSQL.php", true);
 	miXHR.onreadystatechange = comprobarEstadoPeticion;
@@ -50,6 +47,7 @@ function realizarPeticionAsincronaMYSQL(){
 function realizarPeticionAsincronaPDO(){
 	let divResultado =  document.getElementById("resultado");
 	divResultado.innerHTML = "";
+	document.getElementById("spinner").style ="display:block";
 	let miXHR = new objetoXHR();
 	miXHR.open("GET", "servidor/datosPDO.php", true);
 	miXHR.onreadystatechange = comprobarEstadoPeticion;
@@ -71,14 +69,22 @@ function comprobarEstadoPeticion(){
 function crearTablaJSON(respuesta){
 	let divResultado =  document.getElementById("resultado");
 	divResultado.innerHTML = "";
+	document.getElementById("spinner").style ="display:block";
 	var resultados= JSON.parse(respuesta);
-	let salida="<table border='1'><tr><th>NOMBRE</th><th>GENERO</th><th>DIRECTOR</th><th>DURACION</th></tr>";
+	let salida="<table class=table border='2'><tr><th>NOMBRE</th><th>apellido1</th><th>apellido2</th><th>email</th><th>direccion</th><th>cp</th><th>pais</th><th>provincia</th><th>ciudad</th></tr>";
 
 	for (let i=0; i < resultados.length; i++){
 		let objeto = resultados[i];
-		salida+="<tr><td>"+objeto.nombre+"</td><td>"+
-        objeto.genero+"</td><td>"+objeto.director+"</td><td>"+
-        objeto.duracion +"</td></tr>";
+		salida+="<tr><td>"+
+		objeto.nombre+"</td><td>"+
+		objeto.apellido1+"</td><td>"+
+		objeto.apellido2+"</td><td>"+
+		objeto.email +"</td><td>"+
+		objeto.direccion+"</td><td>"+
+		objeto.cp+"</td><td>"+
+        objeto.pais+"</td><td>"+
+		objeto.provincia+"</td><td>"+
+		objeto.ciudad+"</td></tr>";
 	}
 
 	salida+="</table>";
