@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <div id="spinner" class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
+        defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"
+        defer></script>
+    <script src="scripts/validar.js" defer></script>
+
+
+    <title>CREAR </title>
+</head>
+
+<body>
+
+    <!--Navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SecurityHome</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../Index/index.php">Home <span class="sr-only"></span></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!--Fin del navbar-->
+
+
+    <hr class="colorgraph">
+
+    <div id="registro" class="container">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-7 col-sm-offset-2 col-md-offset-3">
+                <form id=formCrear>
+                    <h2>Registrate <small>como un nuevo comprador.</small></h2>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+
+                            <label>Nombre</label>
+                            <div>
+                                <form id="insertarDatos" method="post" action="" .php>
+                                    <div class="form-group">
+                                        <input class="form-control" id="nombre" name="nombre">
+
+                                        <div id="divErroresNombre" class="text-danger"></div>
+
+                                    </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+
+
+                            <!--Apellidos-->
+                            <!--Aqui pondre obligatorio que no sea igual a su nombre-->
+                            <label>Apellido</label>
+                            <div>
+                                <form id="insertarDatos" method="post" action="" .php>
+                                    <div class="form-group">
+                                        <input class="form-control " id="apellido" name="apellido">
+
+                                        <div id="divErroresApellido" class="text-danger"></div>
+
+                                    </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <!--Email-->
+                    <!--Aqui pondre obligatorio @-->
+                    <label>Email</label>
+                    <div>
+                        <form id="insertarDatos" method="post" action="" .php>
+                            <div class="form-group">
+                                <input class="form-control" id="email" name="email">
+
+                                <div id="divErroresEmail" class="text-danger"></div>
+
+                            </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+
+                            <!--Direccion-->
+                            <!--Aqui pondre obligatorio al menos 1 numero-->
+                            <label>Direccion</label>
+                            <div>
+                                <form id="insertarDatos" method="post" action="" .php>
+                                    <div class="form-group">
+                                        <input class="form-control" id="direccion" name="direccion">
+
+                                        <div id="divErroresDireccion" class="text-danger"></div>
+
+                                    </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <!--CP-->
+                            <!--Aqui pondre MAXIMO 5 numeros-->
+                            <label>CP</label>
+                            <div>
+                                <form id="insertarDatos" method="post" action="" .php>
+                                    <div class="form-group">
+                                        <input class="form-control" id="cp" name="cp">
+
+                                        <div id="divErroresCP" class="text-danger"></div>
+
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-3 col-md-4">
+
+                            <!--PAIS-->
+                            <!--El select debera estar marcado-->
+                            <label>Pais</label>
+                            <select class="form-control" id="pais" name="pais">
+                                <option value="0">Ninguno</option>
+                                <option value="España">España</option>
+                                <option value="India">India</option>
+                            </select>
+                            <div id="divErroresPais" class="text-danger">
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <!--provincia-->
+                            <!--El select debera estar marcado-->
+                            <label>provincia</label>
+                            <select class="form-control" id="provincia" name="provincia">
+                                <option value="0">Ninguno</option>
+                                <option value="Andalucia">Andalucia</option>
+                                <option value="Parikitesh">Parikitesh</option>
+                            </select>
+                            <div id="divErroresProvincia" class="text-danger">
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <!--ciudad-->
+                            <!--El select debera estar marcado-->
+                            <label>Ciudad</label>
+                            <select class="form-control " id="ciudad" name="ciudad">
+                                <option value="0">Ninguno</option>
+                                <option value="Sevilla">Sevilla</option>
+                                <option value="Allmahade">Allmahade</option>
+                            </select>
+                            <div id="divErroresCiudad" class="text-danger">
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12"><input type="submit" value="Register" id="crearUsuario"
+                        class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <hr class="colorgraph">
+                    <div id="ultimocomprador">
+                        <label>Ultimo comprador añadido:</label>
+                        <div id=listadoID>
+                            <div id="resultadoID"></div>
+                            <div id="divErroresID" class="text-danger"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    </form>
+
+    </div>
+
+
+</body>
+
+</html>
